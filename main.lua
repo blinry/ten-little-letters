@@ -1,7 +1,6 @@
 require "slam"
-vector = require "hump.vector"
-Timer = require "hump.timer"
-Camera = require "hump.camera"
+scaleinator = require("scaleinator")
+scale = scaleinator.create()
 
 -- convert HSL to RGB (input and output range: 0 - 255)
 function HSL(h, s, l, a)
@@ -49,28 +48,6 @@ function range(value, min, max)
     end
 end
 
-function worldCoords(camera, x1, y1, x2, y2, x3, y3, x4, y4)
-    a1, b1 = camera:worldCoords(x1, y1)
-    a2, b2 = camera:worldCoords(x2, y2)
-    a3, b3 = camera:worldCoords(x3, y3)
-    a4, b4 = camera:worldCoords(x4, y4)
-    return a1, b1, a2, b2, a3, b3, a4, b4
-end
-
-function cameraCoords(camera, x1, y1, x2, y2, x3, y3, x4, y4)
-    a1, b1 = camera:cameraCoords(x1, y1)
-    if x2 then
-        a2, b2 = camera:cameraCoords(x2, y2)
-    end
-    if x3 then
-        a3, b3 = camera:cameraCoords(x3, y3)
-    end
-    if x4 then
-        a4, b4 = camera:cameraCoords(x4, y4)
-    end
-    return a1, b1, a2, b2, a3, b3, a4, b4
-end
-
 function love.load()
     images = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("images")) do
@@ -91,24 +68,56 @@ function love.load()
     fonts = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("fonts")) do
         fonts[filename:sub(1,-5)] = {}
-        fonts[filename:sub(1,-5)][fontsize] = love.graphics.newFont("fonts/"..filename, fontsize)
+        fonts[filename:sub(1,-5)][1000] = love.graphics.newFont("fonts/"..filename, 1000)
+        fonts[filename:sub(1,-5)][50] = love.graphics.newFont("fonts/"..filename, 50)
     end
 
-    love.physics.setMeter(100)
-    world = love.physics.newWorld(0, 0, true)
-    world:setCallbacks(beginContact)
+    love.graphics.setFont(fonts.montserrat[1000])
+    love.graphics.setBackgroundColor(255, 255, 255)
 
-    camera = Camera(300, 300)
-    --camera.smoother = Camera.smooth.damped(3)
-    camera:zoom(1)
+    math.randomseed(os.time())
 
-    --love.graphics.setFont(fonts.unkempt[fontsize])
-    love.graphics.setBackgroundColor(0, 0, 200)
+    canvas = love.graphics.newCanvas(1000, 1000)
+
+    letters = ""
+    energy = 100
+
+    --characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    newChar()
+
+    psystem = love.graphics.newParticleSystem(images.hit, 128)
+    psystem:setParticleLifetime(1, 2) -- Particles live at least 2s and at most 5s.
+    psystem:setEmissionRate(0)
+    psystem:setSizeVariation(1)
+    psystem:setOffset(12, 88)
+    psystem:setLinearAcceleration(0, -20, 20, 0) -- Random movement in all directions.
+    psystem:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
+
+    scale:newMode("1:1", 1, 1) -- Create a mode with 16:9 aspect ratio. The first created mode is automatically set.
+    scale:update(love.graphics.getWidth(), love.graphics.getHeight())
+end
+
+function love.resize(w, h)
+    scale:update(w, h)
+end
+
+function newChar()
+    show = false
+
+    local pos = math.random(1, #characters)
+    char = string.sub(characters, pos, pos)
+    clicks = {}
+
+    canvas:renderTo(function()
+        love.graphics.clear(0, 0, 0, 0)
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.printf(char, 0, -100, 1000, "center")
+    end)
 end
 
 function love.update(dt)
-    Timer.update(dt)
-    world:update(dt)
+    psystem:update(dt)
 end
 
 function love.keypressed(key)
@@ -116,27 +125,97 @@ function love.keypressed(key)
         love.window.setFullscreen(false)
         love.timer.sleep(0.1)
         love.event.quit()
+    else
+        show = true
+        if key:upper() == char then
+            energy = math.min(100, energy + 50)
+            letters = letters..char
+            characters = characters:gsub(char, "")
+        else
+            if energy >= 10 then
+                energy = energy - 10
+            else
+                -- game over
+            end
+        end
     end
 end
 
-function love.mousepressed(x, y, button, touch)
-    if button == 1 then
+function transformMouse(x, y)
+    bw, bh = scale:getBox()
+    tx, ty = scale:getTranslation()
+    return (x - tx) * 1400 / bw, (y - ty) * 1400 / bh
+end
 
+function love.mousepressed(x, y, button, touch)
+    x, y = transformMouse(x, y)
+    x = x-200
+    y = y-200
+    if button == 1 then
+        if show then
+            newChar()
+        else
+            if energy > 0 then
+                data = canvas:newImageData()
+                if x >= 0 and x <= 999 and y >= 0 and y <= 999 then
+                    r,g,b,a = data:getPixel(x, y)
+                    energy = energy - 0.5
+                    if a == 255 then
+                        love.audio.play(sounds.hit)
+                        psystem:setPosition(x+200, y+200)
+                        psystem:emit(1)
+                    else
+                        love.audio.play(sounds.miss)
+                    end
+                    table.insert(clicks, {x, y, a == 255})
+                end
+            else
+                -- game over
+            end
+        end
     end
     if button == 2 then
 
     end
 end
 
-function beginContact(a, b, coll)
-
-end
-
 function love.draw()
-    -- draw world
-    camera:attach()
+    love.graphics.push()
+    bw, bh = scale:getBox()
+    tx, ty = scale:getTranslation()
+    love.graphics.translate(tx, ty)
+    love.graphics.scale(bw/1400, bh/1400)
 
-    camera:detach()
 
-    -- draw UI
+    if show then
+        love.graphics.draw(canvas, 200, 200)
+        for key, click in pairs(clicks) do
+            hit = click[3]
+            if hit then
+                love.graphics.setColor(255, 255, 255)
+            else
+                love.graphics.setColor(0, 0, 0)
+            end
+            love.graphics.circle("fill", click[1]+200, click[2]+200, 10)
+            love.graphics.setColor(255, 255, 255)
+        end
+    else
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.rectangle("fill",200,200,1000,1000)
+    end
+
+    love.graphics.setColor(0, 0, 0)
+    love.graphics.rectangle("fill",200,200+1000+50,energy*10,50)
+
+    love.graphics.setColor(0, 0, 0)
+    love.graphics.setFont(fonts.montserrat[50])
+    --love.graphics.print("Collect "..(10-#letters).." more characters to win: "..letters, 200, 100)
+    love.graphics.print("Ten Little Letters: "..letters, 200, 100)
+    love.graphics.setFont(fonts.montserrat[1000])
+
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.draw(psystem)
+
+
+    love.graphics.pop()
 end

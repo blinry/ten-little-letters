@@ -15,7 +15,7 @@
    version="1.1"
    id="svg4508"
    inkscape:version="0.92.1 r"
-   sodipodi:docname="cover.svg">
+   sodipodi:docname="title.svg">
   <defs
      id="defs4502" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="578.95187"
-     inkscape:cy="89.664599"
+     inkscape:zoom="1.4"
+     inkscape:cx="-276.76306"
+     inkscape:cy="-322.39622"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,7 +35,9 @@
      inkscape:window-height="1347"
      inkscape:window-x="0"
      inkscape:window-y="31"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <metadata
      id="metadata4505">
     <rdf:RDF>
@@ -491,25 +493,25 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.3242054px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="36.91798"
-       y="284.03763"
+       x="37.853424"
+       y="285.24033"
        id="text5302"
        inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
        inkscape:export-xdpi="337"
        inkscape:export-ydpi="337"><tspan
          sodipodi:role="line"
          id="tspan5296"
-         x="36.91798"
-         y="284.03763"
+         x="37.853424"
+         y="285.24033"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332">Ten</tspan><tspan
          sodipodi:role="line"
-         x="36.91798"
-         y="517.27966"
+         x="37.853424"
+         y="518.48236"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
          id="tspan5298" /><tspan
          sodipodi:role="line"
-         x="36.91798"
-         y="750.52173"
+         x="37.853424"
+         y="751.72443"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
          id="tspan5300" /></text>
     <text
@@ -539,7 +541,7 @@
     <text
        id="text5318"
        y="330.9985"
-       x="36.652546"
+       x="37.320721"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.3242054px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
@@ -547,18 +549,18 @@
        inkscape:export-ydpi="337"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
          y="330.9985"
-         x="36.652546"
+         x="37.320721"
          id="tspan5312"
          sodipodi:role="line">Letters</tspan><tspan
          id="tspan5314"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
          y="564.24054"
-         x="36.652546"
+         x="37.320721"
          sodipodi:role="line" /><tspan
          id="tspan5316"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
          y="797.4826"
-         x="36.652546"
+         x="37.320721"
          sodipodi:role="line" /></text>
     <text
        transform="scale(1.0031928,0.99681737)"
@@ -736,5 +738,146 @@
          x="215.35268"
          y="416.12411"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332;">@blinry / morr.cc</tspan></text>
+    <rect
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/title.png"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4605"
+       width="150.74001"
+       height="150.74001"
+       x="-145.39462"
+       y="317.78061" />
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       id="text4613"
+       y="349.11774"
+       x="-131.59546"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.3242054px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="349.11774"
+         x="-131.59546"
+         id="tspan4607"
+         sodipodi:role="line">Ten</tspan><tspan
+         id="tspan4609"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="582.3598"
+         x="-131.59546"
+         sodipodi:role="line" /><tspan
+         id="tspan4611"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="815.60187"
+         x="-131.59546"
+         sodipodi:role="line" /></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       id="text4621"
+       y="371.0054"
+       x="-132.00003"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.3242054px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="371.0054"
+         x="-132.00003"
+         id="tspan4615"
+         sodipodi:role="line">Little</tspan><tspan
+         id="tspan4617"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="604.2475"
+         x="-132.00003"
+         sodipodi:role="line" /><tspan
+         id="tspan4619"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         y="837.48956"
+         x="-132.00003"
+         sodipodi:role="line" /></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.3242054px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-132.12816"
+       y="392.73776"
+       id="text4629"><tspan
+         sodipodi:role="line"
+         id="tspan4623"
+         x="-132.12816"
+         y="392.73776"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332">Letters</tspan><tspan
+         sodipodi:role="line"
+         x="-132.12816"
+         y="625.9798"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         id="tspan4625" /><tspan
+         sodipodi:role="line"
+         x="-132.12816"
+         y="859.22186"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold';fill:#ffffff;stroke-width:0.26458332"
+         id="tspan4627" /></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.13785696px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-131.0204"
+       y="424.7876"
+       id="text4633"
+       transform="scale(1.0031928,0.99681736)"><tspan
+         id="tspan4631"
+         sodipodi:role="line"
+         x="-131.0204"
+         y="424.7876"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;stroke-width:0.26458332">Made in 24 hours</tspan></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.87849474px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-136.08041"
+       y="416.24875"
+       id="text4637"
+       transform="scale(0.96674055,1.0344037)"><tspan
+         id="tspan4635"
+         sodipodi:role="line"
+         x="-136.08041"
+         y="416.24875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;stroke-width:0.26458332">for Ludum Dare 39</tspan></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.9155302px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458335;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-135.24872"
+       y="425.51718"
+       id="text4641"
+       transform="scale(0.97194575,1.028864)"><tspan
+         id="tspan4639"
+         sodipodi:role="line"
+         x="-135.24872"
+         y="425.51718"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;stroke-width:0.26458335">by Sebastian Morr</tspan></text>
+    <text
+       inkscape:export-ydpi="337"
+       inkscape:export-xdpi="337"
+       inkscape:export-filename="/home/seb/work/ld39/images/cover.png"
+       id="text4645"
+       y="453.95883"
+       x="-131.70612"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.99650764px;line-height:1000%;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:discretionary-ligatures historical-ligatures;font-variant-caps:normal;font-variant-numeric:lining-nums tabular-nums slashed-zero;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="453.95883"
+         x="-131.70612"
+         sodipodi:role="line"
+         id="tspan4643">@blinry / morr.cc</tspan></text>
   </g>
 </svg>

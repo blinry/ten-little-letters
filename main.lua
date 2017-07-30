@@ -57,6 +57,7 @@ function love.load()
     sounds = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("sounds")) do
         sounds[filename:sub(1,-5)] = love.audio.newSource("sounds/"..filename, "static")
+        sounds[filename:sub(1,-5)]:setVolume(0.5)
     end
 
     music = {}
@@ -64,6 +65,8 @@ function love.load()
         music[filename:sub(1,-5)] = love.audio.newSource("music/"..filename)
         music[filename:sub(1,-5)]:setLooping(true)
     end
+    music.intro:setLooping(false)
+    music.intro:play()
 
     fonts = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("fonts")) do
@@ -72,7 +75,7 @@ function love.load()
         fonts[filename:sub(1,-5)][50] = love.graphics.newFont("fonts/"..filename, 50)
     end
 
-    love.graphics.setFont(fonts.montserrat[1000])
+    love.audio.setVolume(1)
     love.graphics.setBackgroundColor(255, 255, 255)
 
     math.randomseed(os.time())
@@ -83,7 +86,6 @@ function love.load()
     energy = 100
     mode = "title"
 
-    --characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     characters = allCharacters
     newChar()
@@ -108,7 +110,7 @@ end
 function newChar()
     show = false
 
-    local pos = math.random(1, #characters)
+    local pos = math.random(1, characters:len())
     char = string.sub(characters, pos, pos)
     clicks = {}
 
@@ -116,17 +118,24 @@ function newChar()
         love.graphics.clear(0, 0, 0, 0)
         love.graphics.setColor(255, 255, 255)
         love.graphics.setFont(fonts.montserrat[1000])
-        love.graphics.printf(char, 0, -100, 1000, "center")
+        love.graphics.printf(char, 0, -120, 1000, "center")
     end)
 end
 
 function gameOver()
+    love.audio.play(sounds.gameover)
     mode = "gameover"
     show = false
     hints = {
-        "The English word 'alphabet' is derived from the first two greek letters, alpha and beta.",
-        "The sentence 'The quick brown fox jumps over the lazy dog' is a pangram – it contains all letters of the alphabet.",
-        "A shorter pangram (containing all letters of the alphabet): 'Sphinx of black quartz, judge my vow'."
+        "Fun fact: The English word 'alphabet' is derived from the first two greek letters, alpha and beta.",
+        "At least you did your best.",
+        "Well, you tried.",
+        "Letters are hard, right?",
+        "Letter by letter, you will get... better.",
+        "There weren't even any umlauts in there!",
+        "People who liked 'Ten Little Letters' also liked: Braille.",
+        "I don't hate you.",
+        "Keep trying! Don't give up! You can do it!",
     }
     hint = "Game Over!\nClick to start a new game.\n\n"..hints[math.random(1, #hints)]
 end
@@ -137,10 +146,11 @@ end
 
 function love.keypressed(key)
     if key == "escape" then
-        if mode == "game" or mode == "win" then
-            mode = "title"
-        elseif mode == "title" then
+        if mode == "title" then
             love.event.quit()
+        else
+            mode = "title"
+            love.audio.play(sounds.select)
         end
     end
 end
@@ -154,21 +164,24 @@ function love.textinput(c)
         if not show then
             show = true
             if c == char or c:upper() == char then
+                love.audio.play(sounds.yep)
                 energy = math.min(100, energy + 50)
                 letters = letters..char
                 characters = characters:gsub(char, "")
-                if #letters == 10 then
+                if letters:len() == 10 then
+                    music.intro:play()
                     mode = "win"
                     show = false
                     if hardcore then
                         hint = "Wow, congratulations!\n\nDefinitely let me know that you made it this far!"
                     else
-                        hint = "You did it!\nThanks for playing! <3\n\nI just enabled the 'hardcore mode', where you will also get numbers as well as some special characters! Good luck! :)"
+                        hint = "Yay, you did it!\nThanks for playing! <3\n\nI just enabled the 'hardcore mode', where you will also get numbers as well as some special characters! Good luck! :)"
                     end
                     hardcore = true
                     allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-#!?%$&"
                 end
             else
+                love.audio.play(sounds.nope)
                 if energy >= 10 then
                     energy = energy - 10
                 else
@@ -193,10 +206,12 @@ function love.mousepressed(x, y, button, touch)
 
     if mode == "title" then
         if button == 1 then
+            love.audio.play(sounds.select)
             mode = "game"
         end
     elseif mode == "gameover" or mode == "win" then
         if button == 1 then
+            love.audio.play(sounds.select)
             hint = nil
             mode = "game"
             characters = allCharacters
@@ -217,7 +232,7 @@ function love.mousepressed(x, y, button, touch)
                         end
 
                         r,g,b,a = data:getPixel(x, y)
-                        energy = energy - 1
+                        energy = energy - 0.5
                         if a == 255 then
                             --sounds.hit:setPitch(1+0.2*(math.random()-0.5))
                             love.audio.play(sounds.hit)
@@ -269,12 +284,7 @@ function love.draw()
 
         love.graphics.setColor(0, 0, 0)
         love.graphics.setFont(fonts.montserrat[50])
-        --love.graphics.print("Collect "..(10-#letters).." more characters to win: "..letters, 200, 100)
-        if hardcore then
-            love.graphics.print("Ten Little Characters: "..letters, 200, 100)
-        else
-            love.graphics.print("Ten Little Letters: "..letters, 200, 100)
-        end
+        love.graphics.print("Ten Little Letters: "..letters, 200, 100)
 
         love.graphics.setColor(255, 255, 255)
         love.graphics.draw(psystem)

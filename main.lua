@@ -118,7 +118,7 @@ function newChar()
         love.graphics.clear(0, 0, 0, 0)
         love.graphics.setColor(255, 255, 255)
         love.graphics.setFont(fonts.montserrat[1000])
-        love.graphics.printf(char, 0, -120, 1000, "center")
+        love.graphics.printf(char, -500, -120, 2000, "center")
     end)
 end
 
@@ -178,7 +178,7 @@ function love.textinput(c)
                         hint = "Yay, you did it!\nThanks for playing! <3\n\nI just enabled the 'hardcore mode', where you will also get numbers as well as some special characters! Good luck! :)"
                     end
                     hardcore = true
-                    allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-#!?%$&"
+                    allCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#!?%$&"
                 end
             else
                 love.audio.play(sounds.nope)

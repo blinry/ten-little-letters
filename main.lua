@@ -92,11 +92,11 @@ function love.load()
     hint = "Click around,\nthen type your guess.\n\nCollect ten letters to win.\n\nWatch your energy bar."
 
     psystem = love.graphics.newParticleSystem(images.hit, 128)
-    psystem:setParticleLifetime(1, 2) -- Particles live at least 2s and at most 5s.
+    psystem:setParticleLifetime(2, 3)
     psystem:setEmissionRate(0)
     psystem:setSizeVariation(1)
     psystem:setOffset(12, 88)
-    psystem:setLinearAcceleration(0, -20, 20, 0) -- Random movement in all directions.
+    psystem:setLinearAcceleration(0, -20, 20, 0)
     psystem:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
 
     scale:newMode("1:1", 1, 1) -- Create a mode with 16:9 aspect ratio. The first created mode is automatically set.
@@ -183,7 +183,7 @@ function love.textinput(c)
             else
                 love.audio.play(sounds.nope)
                 if energy >= 10 then
-                    energy = energy - 10
+                    energy = energy - 5
                 else
                     energy = 0
                     gameOver()
@@ -232,7 +232,7 @@ function love.mousepressed(x, y, button, touch)
                         end
 
                         r,g,b,a = data:getPixel(x, y)
-                        energy = energy - 0.5
+                        energy = energy - 0.25
                         if a == 255 then
                             --sounds.hit:setPitch(1+0.2*(math.random()-0.5))
                             love.audio.play(sounds.hit)

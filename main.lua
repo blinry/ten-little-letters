@@ -120,6 +120,7 @@ function newChar()
         love.graphics.setFont(fonts.montserrat[1000])
         love.graphics.printf(char, -500, -120, 2000, "center")
     end)
+    data = canvas:newImageData()
 end
 
 function gameOver()
@@ -225,7 +226,6 @@ function love.mousepressed(x, y, button, touch)
                 newChar()
             else
                 if energy > 0 then
-                    data = canvas:newImageData()
                     if x >= 0 and x <= 999 and y >= 0 and y <= 999 then
                         if hint then
                             hint = nil
